@@ -1,7 +1,7 @@
 #include <REGX52.H>
 
 #ifndef _KEY_NUM
-#define _KEYNUM
+#define _KEY_NUM
     #define K1  1
     #define K2  2
     #define K3  3
