@@ -38,11 +38,26 @@ int pow(int num, int a){
 }
 
 //t ms
-void delay(unsigned int t){
-    int i,j;
-    for (i = 0; i < 120; i++){
-        for (j = 0; j < t; j++);
+void delay1ms(unsigned int t)		//@12.000MHz
+{
+	unsigned char i, j;
+    while(t){
+        i = 2;
+	    j = 239;
+	    do
+	    {
+		    while (--j);
+	    } while (--i);
+        t--;
     }
+	
+}
+
+//t us
+void delay1us(unsigned int t)		//@12.000MHz
+{
+	_nop_();
+	while (--t);
 }
 
 //num -> defined num like ONE TWO or ONE_DOT for example,0 <= num <= 9

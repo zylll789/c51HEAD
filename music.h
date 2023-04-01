@@ -47,7 +47,7 @@ void play(unsigned int* p,unsigned int length){
         timer=65536-1000000/(pinlv[p[3*i+1]][p[3*i+2]]*2);
         TH0=timer/256;
         TL0=timer%256;
-        delay(250*p[3*i+3]);
+        delay1ms(250*p[3*i+3]);
     }
 }
 
@@ -62,7 +62,7 @@ void timer0() interrupt 1
 //p -> the music you want to play
 void checkPlay(int key,unsigned int *p){
     if(checkKeyDown() == key){
-            delay(10);
+            delay1ms(10);
             if(checkKeyDown() == key){
                 ET0=1;
                 play(p,51);
